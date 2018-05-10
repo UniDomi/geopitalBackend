@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  year: 1
+Insel:
+  name: Inselspital
+  streetAndNumber: "Inselstrasse 7"
+  zipCodeAndCity: "3000 Bern"
+  latitude: "7.4386372"
+  longitude: "46.951081"
 
-two:
-  name: MyString
-  year: 1

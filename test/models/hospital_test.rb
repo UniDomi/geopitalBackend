@@ -3,7 +3,7 @@ require 'test_helper'
 class HospitalTest < ActiveSupport::TestCase
   
   def setup
-  	@hospital = Hospital.new(name: "Hospital Example", year: 2015)
+  	@hospital = Hospital.new(name: "Hospital Example", streetAndNumber: "Street 12", zipCodeAndCity: "1000 City", longitude: 12.34567, latitude: 98.76543)
   end
 
   test "should be valid" do
