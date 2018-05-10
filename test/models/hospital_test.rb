@@ -14,7 +14,6 @@ class HospitalTest < ActiveSupport::TestCase
   	@hospital.name = ""
   	assert_not @hospital.valid?
   end
-<<<<<<< HEAD
 
   test "year should be present" do
   	@hospital.year = nil;
@@ -33,12 +32,4 @@ class HospitalTest < ActiveSupport::TestCase
   	@hospital.save
   	assert duplicate_hospital.valid?
   end
-
-  #test "hospital should have an addess" do
-    #@hospital.addess = nil;
-    #assert_not @hospital.valid?
-  #end
-
-=======
->>>>>>> parent of 3ffdbf1... Hospital name and year unique validation
 end
