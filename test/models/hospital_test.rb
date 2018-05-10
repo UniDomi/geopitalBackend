@@ -33,4 +33,9 @@ class HospitalTest < ActiveSupport::TestCase
   	assert duplicate_hospital.valid?
   end
 
+  #test "hospital should have an addess" do
+    #@hospital.addess = nil;
+    #assert_not @hospital.valid?
+  #end
+
 end
