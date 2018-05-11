@@ -3,7 +3,7 @@ require 'test_helper'
 class GeocoderTest < ActiveSupport::TestCase
 
   def setup
-    @address = "Freiburgstrasse 18, 3010 Bern"
+    @address = hospitals(:Insel).streetAndNumber + ", " + hospitals(:Insel).zipCodeAndCity
   end
 
   test "Should return coordinates" do
