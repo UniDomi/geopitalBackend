@@ -1,2 +1,6 @@
 <h1>Hospitals#index</h1>
-<p>Find me in app/views/hospitals/index.html.erb</p>
+<ul>
+  <% @hospitals.each do |hospital| %>
+  <li><%=hospital.name%></li>
+  <% end %>
+</ul>
