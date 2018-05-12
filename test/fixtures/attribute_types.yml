@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  code: MyString
-  nameDE: MyString
-  nameFR: MyString
-  nameIT: MyString
+KT:
+  code: KT
+  nameDE: Kanton
+  nameFR: Canton
+  nameIT: Cantone
 
-two:
-  code: MyString
-  nameDE: MyString
-  nameFR: MyString
-  nameIT: MyString
+Ops:
+  code: Ops
+  nameDE: Anzahl Operationssäle
+  nameFR: Nombre de salles d’opération
+  nameIT: Sale operatorie
+
