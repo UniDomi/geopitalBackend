@@ -16,7 +16,8 @@ class HospitalsController < ApplicationController
     i = 0
     while i < @legend.length
       @test.store(@legend[i], @hospital[i])
+      i += 1
     end
-    
+
   end
 end
