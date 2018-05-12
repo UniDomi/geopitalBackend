@@ -5,7 +5,7 @@ class HospitalLocationTest < ActiveSupport::TestCase
     @hospital_location = hospital_locations(:InselOne)
   end
 
-  test "should be valid" do
+  test "hospital location should be valid" do
     assert @hospital_location.valid?
   end
 

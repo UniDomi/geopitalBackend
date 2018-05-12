@@ -6,7 +6,7 @@ class HospitalTest < ActiveSupport::TestCase
   	@hospital = hospitals(:Insel)
   end
 
-  test "should be valid" do
+  test "hospital should be valid" do
   	assert @hospital.valid?
   end
 
