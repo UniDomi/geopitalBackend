@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+InselOne:
   name: Universitätsspital Bern
   kanton: MyString
   streetAndNumber: MyString
@@ -10,7 +10,7 @@ one:
   la: MyString
   hospital: Insel
 
-two:
+InselTwo:
   name: Spital Tiefenau
   kanton: MyString
   streetAndNumber: MyString

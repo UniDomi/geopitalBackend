@@ -2,7 +2,7 @@ require 'test_helper'
 
 class HospitalLocationTest < ActiveSupport::TestCase
   def setup
-    @hospital_location = hospital_locations(:one)
+    @hospital_location = hospital_locations(:InselOne)
   end
 
   test "should be valid" do
@@ -20,7 +20,7 @@ class HospitalLocationTest < ActiveSupport::TestCase
   end
 
   test "name should be unique" do
-    @hospital_location_duplicate = hospital_locations(:two)
+    @hospital_location_duplicate = hospital_locations(:InselTwo)
     @hospital_location_duplicate.name = @hospital_location.name.upcase
     assert_not @hospital_location_duplicate.valid?
   end

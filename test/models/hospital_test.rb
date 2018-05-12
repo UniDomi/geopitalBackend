@@ -21,4 +21,15 @@ class HospitalTest < ActiveSupport::TestCase
     assert_not @hospital_duplicate.valid?
   end
 
+  test "destroy all hospital_locations when destroying hospital" do
+    test = false
+    begin
+      @hospital.destroy
+      @hospital_location = hospital_locations(:InselOne)
+    rescue Exception => e
+      test = true
+    end
+    assert test
+  end
+
 end
