@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'attribute_types/index'
+  get 'attribute_types/new'
+  get 'attribute_types/parse'
+  get 'attribut_types/inex'
+  get 'attribut_types/nw'
+  get 'attribut_types/parse'
   get 'parsers/index'
   get 'parsers/details'
   get 'parsers/parse'
