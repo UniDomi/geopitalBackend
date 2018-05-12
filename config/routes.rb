@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'hospitals/index'
+  get 'hospitals/new'
+  get 'hospitals/parse'
   get 'attribute_types/index'
   get 'attribute_types/new'
   get 'attribute_types/parse'
