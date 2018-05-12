@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'api/hospitals'
+  get 'api/attributeTypes'
   get 'attribute_types/index'
   get 'attribute_types/new'
   get 'attribute_types/parse'
