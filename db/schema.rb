@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_05_12_134321) do
     t.string "nameIT"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
   create_table "hospital_attributes", force: :cascade do |t|
     t.string "code"
