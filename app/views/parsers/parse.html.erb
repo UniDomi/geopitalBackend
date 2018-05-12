@@ -1,0 +1,8 @@
+<h1><%= @sheet.name %></h1>
+<p><%=link_to 'Parse this',{:controller=>'attribute_types', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
+<ul>
+  <% @sheet.each do |row| %>
+  <li><%= row %> </li>
+  <li><%= row.length %></li>
+  <%end %>
+</ul>

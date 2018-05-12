@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2018_05_12_134321) do
 
+  create_table "attribute_types", force: :cascade do |t|
+    t.string "code"
+    t.string "nameDE"
+    t.string "nameFR"
+    t.string "nameIT"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   create_table "hospital_attributes", force: :cascade do |t|
     t.string "code"
     t.integer "year"

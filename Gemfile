@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.0'
 gem 'carrierwave'
 # Gem for Nice design
 gem 'bootstrap-sass'
+# Gem for reading excel spreadsheets
+gem 'spreadsheet'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
