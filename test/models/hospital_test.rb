@@ -32,4 +32,15 @@ class HospitalTest < ActiveSupport::TestCase
     assert test
   end
 
+  test "destroy all hospital attributes when destroying hospital" do
+    test = false
+    begin
+      @hospital.destroy
+      @hospital_attribute = hospital_attributes(:KTInsel16)
+    rescue Exception => e
+      test = true
+    end
+    assert test
+  end
+
 end
