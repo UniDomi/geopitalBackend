@@ -18,7 +18,7 @@
 !/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
+/public/*
 
 /node_modules
 /yarn-error.log
