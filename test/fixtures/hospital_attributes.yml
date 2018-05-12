@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+KTInsel16:
+  code: KT
+  year: 2016
+  attribute_type: string
+  value: BE
+  de: Kanton
+  fr: Canton
+  it: Cantone
+  hospital: Insel
+
+OpsInsel16:
+  code: Ops
+  year: 2016
+  attribute_type: number
+  value: 4
+  de: Anzahl Operationssäle
+  fr: Nombre de salles d’opération
+  it: Sale operatorie
+  hospital: Insel

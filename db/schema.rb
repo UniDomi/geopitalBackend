@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_12_090337) do
+ActiveRecord::Schema.define(version: 2018_05_12_134321) do
+
+  create_table "hospital_attributes", force: :cascade do |t|
+    t.string "code"
+    t.integer "year"
+    t.string "attribute_type"
+    t.string "value"
+    t.string "de"
+    t.string "fr"
+    t.string "it"
+    t.integer "hospital_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_hospital_attributes_on_hospital_id"
+  end
+
+  create_table "hospital_locations", force: :cascade do |t|
+    t.string "name"
+    t.string "kanton"
+    t.string "streetAndNumber"
+    t.string "zipCodeAndCity"
+    t.float "longitude"
+    t.float "latitude"
+    t.string "la"
+    t.integer "hospital_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospital_id"], name: "index_hospital_locations_on_hospital_id"
+  end
 
   create_table "hospitals", force: :cascade do |t|
     t.string "name"
