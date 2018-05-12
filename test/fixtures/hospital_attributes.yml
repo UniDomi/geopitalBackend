@@ -13,3 +13,10 @@ OpsInsel16:
   attribute_type: number
   value: 4
   hospital: Insel
+
+OpsInsel15:
+  code: Ops
+  year: 2015
+  attribute_type: number
+  value: 4
+  hospital: Insel
