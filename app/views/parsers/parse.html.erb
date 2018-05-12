@@ -1,1 +1,6 @@
 <h1><%= @sheet.name %></h1>
+<ul>
+  <% @sheet.each do |row| %>
+  <li><%= row %> </li>
+  <%end %>
+</ul>

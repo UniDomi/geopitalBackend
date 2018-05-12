@@ -13,7 +13,8 @@ class ParsersController < ApplicationController
 
   def parse
     @upload = Upload.find(params[:id])
+    @name = (params[:sheet])
     @data = Spreadsheet.open 'public'+@upload.attachment_url
-    @sheet = @data.worksheets (params[:sheet])
+    @sheet = @data.worksheet @name
   end
 end
