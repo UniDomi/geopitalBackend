@@ -5,9 +5,6 @@ KTInsel16:
   year: 2016
   attribute_type: string
   value: BE
-  de: Kanton
-  fr: Canton
-  it: Cantone
   hospital: Insel
 
 OpsInsel16:
@@ -15,7 +12,4 @@ OpsInsel16:
   year: 2016
   attribute_type: number
   value: 4
-  de: Anzahl Operationssäle
-  fr: Nombre de salles d’opération
-  it: Sale operatorie
   hospital: Insel
