@@ -29,6 +29,17 @@ class AttributeTypeTest < ActiveSupport::TestCase
     assert_not @attribute_type.valid?
   end
 
+  test "category should be present with value string or number" do
+    @attribute_type.category = ""
+    assert_not @attribute_type.valid?
+    @attribute_type.category = "hallo"
+    assert_not @attribute_type.valid?
+    @attribute_type.category = "string"
+    assert @attribute_type.valid?
+    @attribute_type.category = "number"
+    assert @attribute_type.valid?
+  end
+
   test "code should be unique" do
     attribute_type_duplicate = attribute_types(:Ops)
     attribute_type_duplicate.code = @attribute_type.code.downcase
