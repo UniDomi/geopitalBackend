@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'locations/index'
+  get 'locations/details'
+  get 'locations/coords'
+  get 'locations/parse'
+  get 'hospitals/coords'
+  get 'hospitals/details'
+  get 'hospitals/index'
+  get 'hospitals/new'
+  get 'hospitals/parse'
   get 'api/hospitals'
   get 'api/attributeTypes'
   get 'attribute_types/index'
