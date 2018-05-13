@@ -7,13 +7,18 @@ class HospitalsController < ApplicationController
   def details
     @hospital = Hospital.find(params[:id])
   end
+
   def new
     @hospital = Hospital.find(params[:id])
     address = @hospital.streetAndNumber + ", " + @hospital.zipCodeAndCity
     @coordinates = Geocoder.coordinates(address)
-    @hospital.latitude = (@coordinates[0])
-    @hospital.longitude = (@coordinates[1])
-    @hospital.save
+    if !@coordinates == nil
+      @hospital.latitude = (@coordinates[0])
+      @hospital.longitude = (@coordinates[1])
+      @hospital.save
+    else
+      @coordinates = 'No coordinates found'
+    end
   end
 
   def parse
@@ -44,4 +49,26 @@ class HospitalsController < ApplicationController
       j += 1
     end
   end
+
+  def coords
+     @hospitales = Hospital.where(latitude: nil).limit(1)
+     @hospitals = @hospitales
+     @errors = Array.new
+     @hospitals.each do |hospital|
+       if hospital.streetAndNumber == nil || hospital.zipCodeAndCity == nil
+         @errors << 'No address found for: ' + hospital.name
+         next
+       end
+       address = hospital.streetAndNumber + ", " + hospital.zipCodeAndCity
+       sleep(1)
+       @coordinates = Geocoder.coordinates(address)
+       if !@coordinates == nil
+         hospital.latitude = (@coordinates[0])
+         hospital.longitude = (@coordinates[1])
+         hospital.save
+       else
+         @errors << 'No coordinates found for: ' + hospital.name + ' ' + address
+       end
+     end
+   end
 end

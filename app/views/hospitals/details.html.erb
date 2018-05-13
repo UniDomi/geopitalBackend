@@ -1,4 +1,5 @@
 <h1><%= @hospital.name %></h1>
+<%= link_to 'Index', {action:'index'}%>
 <p>This hospital has <%= @hospital.hospital_attributes.length %> attributes </p>
 <p><%if @hospital.longitude == nil%>
   <strong> This hospital has no geocoding</strong>

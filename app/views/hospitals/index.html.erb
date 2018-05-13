@@ -1,4 +1,11 @@
 <h1>Hospitals#index</h1>
+<h2>Kennzahlen</h2>
+<table>
+  <tr>
+    <td>Spitäler in DB</td>
+    <td><%=@hospitals.length%></td>
+  </tr>
+</table>
 <p><%= @hospitals[10].hospital_attributes[1].code %>
 <p><%= @hospitals[10].hospital_attributes[1].value %>
 <ul>
