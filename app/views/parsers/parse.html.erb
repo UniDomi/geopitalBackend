@@ -1,6 +1,7 @@
 <h1><%= @sheet.name %></h1>
 <p><%=link_to 'Parse AttributeTypes',{:controller=>'attribute_types', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
 <p><%=link_to 'Parse Hospitals',{:controller=>'hospitals', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
+<p><%=link_to 'Parse Locations',{:controller=>'locations', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
 <ul>
   <% @sheet.each do |row| %>
   <li><%= row %> </li>

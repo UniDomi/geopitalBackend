@@ -5,9 +5,20 @@
     <td>Spitäler in DB</td>
     <td><%=@hospitals.length%></td>
   </tr>
+  <tr>
+    <td>Spitäler mit Koordinaten</td>
+    <td><%=@hospitals.select{|l| l.latitude.present?}.count%></td>
+  </tr>
+  <tr>
+    <td>Spitäler mit Addressen</td>
+    <td><%=@hospitals.select{|l| l.streetAndNumber.present?}.count%></td>
+  </tr>
+  <tr>
+    <td>Spitäler mit Attributen</td>
+    <td><%=@hospitals.select{|l| l.hospital_attributes.length > 0}.count%></td>
+  </tr>
 </table>
-<p><%= @hospitals[10].hospital_attributes[1].code %>
-<p><%= @hospitals[10].hospital_attributes[1].value %>
+<h2>Spitäler</h2>
 <ul>
   <% @hospitals.each do |hospital| %>
   <li><%=link_to hospital.name, {action: 'details', :id => hospital.id}%></li>

@@ -14,7 +14,6 @@
    <thead>.
       <tr>
          <th>Name</th>
-         <th>Download Link</th>
          <th> </th>
       </tr>
    </thead>
@@ -23,8 +22,8 @@
       <% @uploads.each do |upload| %>
 
          <tr>
-            <td><%= link_to upload.name, {:controller=>'parsers', :action => 'details', :id => upload.id} %></td>
-            <td><%= link_to "Download Resume", upload.attachment_url %></td>
+            <td><%= upload.name  %></td>
+            <td><%= link_to "Parse file", {:controller=>'parsers', :action => 'details', :id => upload.id} %></td>
             <td><%= button_to "Delete",  upload, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
          </tr>
 
