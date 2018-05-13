@@ -7,6 +7,13 @@ KT:
   nameFR: Canton
   nameIT: Cantone
 
+LA:
+  code: LA
+  category: string
+  nameDE: Kanton
+  nameFR: Canton
+  nameIT: Cantone
+
 Ops:
   code: Ops
   category: number
