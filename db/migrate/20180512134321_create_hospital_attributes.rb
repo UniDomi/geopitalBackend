@@ -3,7 +3,6 @@ class CreateHospitalAttributes < ActiveRecord::Migration[5.2]
     create_table :hospital_attributes do |t|
       t.string :code
       t.integer :year
-      t.string :attribute_type
       t.string :value
       t.references :hospital, foreign_key: true
 

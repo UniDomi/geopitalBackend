@@ -28,17 +28,6 @@ class HospitalAttributeTest < ActiveSupport::TestCase
     assert_not @hospital_attribute.valid?
   end
 
-  test "attribute_type should be present with value string or number" do
-    @hospital_attribute.attribute_type = ""
-    assert_not @hospital_attribute.valid?
-    @hospital_attribute.attribute_type = "hallo"
-    assert_not @hospital_attribute.valid?
-    @hospital_attribute.attribute_type = "string"
-    assert @hospital_attribute.valid?
-    @hospital_attribute.attribute_type = "number"
-    assert @hospital_attribute.valid?
-  end
-
   test "code, year and hospital_id should be unique" do
     hospital_attribute_duplicate = hospital_attributes(:OpsInsel16)
     hospital_attribute_duplicate.code = @hospital_attribute.code
