@@ -1,9 +1,19 @@
 class HospitalsController < ApplicationController
+  require 'geocoder'
   def index
     @hospitals = Hospital.all
   end
 
+  def details
+    @hospital = Hospital.find(params[:id])
+  end
   def new
+    @hospital = Hospital.find(params[:id])
+    address = @hospital.streetAndNumber + ", " + @hospital.zipCodeAndCity
+    @coordinates = Geocoder.coordinates(address)
+    @hospital.latitude = (@coordinates[0])
+    @hospital.longitude = (@coordinates[1])
+    @hospital.save
   end
 
   def parse

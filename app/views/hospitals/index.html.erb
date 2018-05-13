@@ -3,7 +3,7 @@
 <p><%= @hospitals[10].hospital_attributes[1].value %>
 <ul>
   <% @hospitals.each do |hospital| %>
-  <li><%=hospital.name%></li>
+  <li><%=link_to hospital.name, {action: 'details', :id => hospital.id}%></li>
   <li><%= hospital.hospital_attributes.length %>
   <% end %>
 </ul>
