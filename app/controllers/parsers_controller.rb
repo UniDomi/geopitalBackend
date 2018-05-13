@@ -1,5 +1,7 @@
+require 'spreadsheet'
+
 class ParsersController < ApplicationController
-  require 'spreadsheet'
+
   Spreadsheet.client_encoding = 'UTF-8'
   def index
     @uploads = Upload.all

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_05_12_134321) do
 
   create_table "attribute_types", force: :cascade do |t|
     t.string "code"
+    t.string "category"
     t.string "nameDE"
     t.string "nameFR"
     t.string "nameIT"
@@ -24,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_05_12_134321) do
   create_table "hospital_attributes", force: :cascade do |t|
     t.string "code"
     t.integer "year"
-    t.string "attribute_type"
     t.string "value"
     t.integer "hospital_id"
     t.datetime "created_at", null: false
