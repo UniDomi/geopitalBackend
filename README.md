@@ -21,4 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+To Install ruby on rails: http://installrails.com/
+* Use Postgres instead of SQLite3
+* Insatll rubyMine instead of Sublime
