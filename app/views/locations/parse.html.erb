@@ -1,11 +1,11 @@
 <h1>Locations#parse</h1>
 <ul>
-  <% @legend.each do |l| %>
-  <li><%=l%></li>
+  <% @errors.each do |e| %>
+  <li><%=e%></li>
   <% end %>
 </ul>
 <ul>
   <% @locs.each do |l| %>
-  <li><%=l%></li>
+  <li><%=l.name%></li>
   <% end %>
 </ul>
