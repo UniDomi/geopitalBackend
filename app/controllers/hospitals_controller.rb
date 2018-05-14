@@ -51,14 +51,27 @@ class HospitalsController < ApplicationController
   end
 
   def coords
-     @hospitales = Hospital.where(latitude: nil).limit(1)
-     @hospitals = @hospitales
+    # DEMOCOORDS AT THE MOMENT!
+     @hospitals = Hospital.where(latitude: nil)
      @errors = Array.new
      @hospitals.each do |hospital|
        if hospital.streetAndNumber == nil || hospital.zipCodeAndCity == nil
          @errors << 'No address found for: ' + hospital.name
          next
        end
+       lat = 46.905053 + rand(-1..1)
+       lon =  7.981008 + rand(-2..2)
+       hospital.latitude = lat
+       hospital.longitude = lon
+       hospital.save
+       hospital.hospital_locations.each do |loc|
+         lat = 46.905053 + rand(-1..1)
+         lon =  7.981008 + rand(-2..2)
+         loc.latitude = lat
+         loc.longitude = lon
+         loc.save
+       end
+       /
        address = hospital.streetAndNumber + ", " + hospital.zipCodeAndCity
        sleep(1)
        @coordinates = Geocoder.coordinates(address)
@@ -69,6 +82,7 @@ class HospitalsController < ApplicationController
        else
          @errors << 'No coordinates found for: ' + hospital.name + ' ' + address
        end
+       /
      end
    end
 end

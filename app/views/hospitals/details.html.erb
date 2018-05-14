@@ -26,6 +26,30 @@
     <td>Latitude</td>
     <td><%= @hospital.latitude%></td>
   </tr>
+</table>
+<% @hospital.hospital_locations.each do |loc| %>
+  <table>
+    <tr>
+      <th>Location</th>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td><%= loc.streetAndNumber%></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><%=loc.zipCodeAndCity%></td>
+    </tr>
+    <tr>
+      <td>Longitude</td>
+      <td><%= loc.longitude%></td>
+    </tr>
+    <tr>
+      <td>Latitude</td>
+      <td><%= loc.latitude%></td>
+    </tr>
+  </table>
+<% end %>
 <table>
   <tr>
     <th>Code</th>
