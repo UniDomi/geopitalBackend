@@ -43,7 +43,7 @@ class HospitalsController < ApplicationController
         #@hospData.delete("Adr")
         #@hospData.delete("Ort")
         @hospData.each do |attr|
-          @attribute = @hosp.hospital_attributes.create(code:attr[0], value:attr[1], year:2016, attribute_type:"string")
+          @attribute = @hosp.hospital_attributes.create(code:attr[0], value:attr[1], year:2016)
         end
       end
       j += 1
