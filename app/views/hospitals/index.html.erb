@@ -17,11 +17,16 @@
     <td>Spitäler mit Attributen</td>
     <td><%=@hospitals.select{|l| l.hospital_attributes.length > 0}.count%></td>
   </tr>
+  <tr>
+    <td>Spitäler mit Locations</td>
+    <td><%=@hospitals.select{|l| l.hospital_locations.length > 0}.count%></td>
+  </tr>
 </table>
 <h2>Spitäler</h2>
 <ul>
   <% @hospitals.each do |hospital| %>
   <li><%=link_to hospital.name, {action: 'details', :id => hospital.id}%></li>
-  <li><%= hospital.hospital_attributes.length %>
+  <li><%= hospital.hospital_attributes.length %></li>
+  <li><%= hospital.hospital_locations.length %></li>
   <% end %>
 </ul>
