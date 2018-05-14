@@ -3,6 +3,9 @@ require 'test_helper'
 class ApiControllerTest < ActionDispatch::IntegrationTest
   test "should get attributeTypes" do
     get api_attributeTypes_url
+    parsed_json = ActiveSupport::JSON.decode(@response.body)
+    assert parsed_json["attribute_types_string"][0]["code"] == "LA"
+    assert parsed_json["attribute_types_number"][0]["code"] == "Ops"
     assert_response :success
   end
 

@@ -8,7 +8,8 @@ class ApiController < ApplicationController
   end
 
   def attributeTypes
-    @attribute_types = AttributeType.all
-    render :json => {:attribute_types => @attribute_types}
+    @attribute_types_string = AttributeType.where(:category => "string")
+    @attribute_types_number = AttributeType.where(:category => "number")
+    render :json => {:attribute_types_string => @attribute_types_string, :attribute_types_number => @attribute_types_number}
   end
 end
