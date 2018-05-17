@@ -1,10 +1,12 @@
+require 'oj'
+
 class ApiController < ApplicationController
   def hospitals
     max_year = HospitalAttribute.maximum("year")
-    @hospitals = Hospital
+    hospitals = Hospital
                      .includes(:hospital_attributes, :hospital_locations).where(:hospital_attributes => {:year => max_year})
-                     .as_json(include: [:hospital_attributes, :hospital_locations])
-    render :json => @hospitals
+                    .as_json(include: [:hospital_attributes, :hospital_locations])
+    render :json => Oj.dump(hospitals)
   end
 
   def attributeTypes
