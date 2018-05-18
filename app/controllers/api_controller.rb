@@ -12,6 +12,8 @@ class ApiController < ApplicationController
   def attributeTypes
     #@attribute_types_string = AttributeType.where(:category => "string")
     #@attribute_types_number = AttributeType.where(:category => "number")
-    render :json => {:attribute_types_string => AttributeType.where(:category => "string"), :attribute_types_number => AttributeType.where(:category => "number")}
+    #render :json => {:attribute_types_string => AttributeType.where(:category => "string"), :attribute_types_number => AttributeType.where(:category => "number")}
+    @@data = File.read("attributeTypes.json")
+    render :json => @@data#Oj.dump(hospitals)
   end
 end
