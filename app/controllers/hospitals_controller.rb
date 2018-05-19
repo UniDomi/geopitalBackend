@@ -28,6 +28,7 @@ class HospitalsController < ApplicationController
     @sheet = @data.worksheet @name
     @legend = @sheet.row(0)
     @hosps = Array.new
+    @year = @name[2..5]
     j = 1
     while j < @sheet.rows.length
       @hospital = @sheet.row(j)
@@ -42,10 +43,11 @@ class HospitalsController < ApplicationController
       end
       if !Hospital.exists?(name: @hospData["Inst"])
         @hosp = Hospital.create(name:@hospData["Inst"], streetAndNumber:@hospData["Adr"], zipCodeAndCity:@hospData["Ort"])
-
-        @hospData.each do |attr|
-          @attribute = @hosp.hospital_attributes.create(code:attr[0], value:attr[1], year:2016)
-        end
+      else
+        @hosp = Hospital.where(name:@hospData["Inst"]).first
+      end
+      @hospData.each do |attr|
+        @attribute = @hosp.hospital_attributes.create(code:attr[0], value:attr[1], year:@year)
       end
       j += 1
     end
