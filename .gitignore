@@ -31,3 +31,4 @@
 
 # Ignore JetBrains .idea settings
 .idea/
+*.sqlite3
