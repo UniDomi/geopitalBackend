@@ -31,7 +31,7 @@ class AttributeTypesController < ApplicationController
         if @code == 'AnzStand'
           s = 'number'
         end
-        if @code == 'Amb' || @code == 'Stat' || @code == 'Amb, Stat'
+        if @code == 'Amb' || @code == 'Stat' || @code == 'Amb, Stat' || @code == 'Inst, Adr, Ort'
           i += 1
           next
         end
