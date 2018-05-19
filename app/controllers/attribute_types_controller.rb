@@ -28,6 +28,13 @@ class AttributeTypesController < ApplicationController
             s = 'number'
           end
         end
+        if @code == 'AnzStand'
+          s = 'number'
+        end
+        if @code == 'Amb' || @code == 'Stat' || @code == 'Amb, Stat'
+          i += 1
+          next
+        end
         if !AttributeType.where(code: @code).exists? || @code.equal?('KZ-Code')
           @types << AttributeType.create(code: @code, nameDE: row[2], nameFR: row[3], nameIT: row[4], category: s)
         end
