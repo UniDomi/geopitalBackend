@@ -30,7 +30,9 @@ class LocationsController < ApplicationController
       if @hospital == nil
         @errors << 'Not found ' + @data["Inst"]
       else
-        @locs << @hospital.hospital_locations.create(name: @data["Inst"], kanton: @data["KT"], streetAndNumber: @data["Adr_Standort"], zipCodeAndCity: @data["Ort_Standort"], la: @data["la"])
+        if !@hospital.streetAndNumber.equal?(@data["Adr_Standort"])
+          @locs << @hospital.hospital_locations.create(name: @data["Standort"], kanton: @data["KT"], streetAndNumber: @data["Adr_Standort"], zipCodeAndCity: @data["Ort_Standort"], la: @data["LA"])
+        end
       end
       j += 1
     end
