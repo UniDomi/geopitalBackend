@@ -17,7 +17,11 @@ class HospitalsController < ApplicationController
   end
 
   def parse
-    read_and_store_hospitals(Upload.find(params[:id]), params[:sheet])
+    upload = Upload.find(params[:id])
+    sheet_name = params[:sheet]
+    data = Spreadsheet.open 'public'+upload.attachment_url
+    sheet = data.worksheet sheet_name
+    read_and_store_hospitals(sheet, sheet_name)
   end
 
   def coords

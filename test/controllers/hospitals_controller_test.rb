@@ -3,8 +3,7 @@ require 'test_helper'
 class HospitalsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
-    @upload = Upload.create(name: "upload", attachment: 'files/kzp16_daten.xls')
-    @id = @upload.id
+    @id = hospitals(:Insel).id
   end
 
   test "should get index" do
@@ -12,13 +11,8 @@ class HospitalsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test "should get new" do
-    #get hospitals_new_path(id: "Insel")
-    #assert_response :success
-  #end
-
-  test "should get parse" do
-    post hospitals_parse_url, params: { id: @id }
+  test "should return hospital with params id" do
+    get hospitals_details_path(id: @id)
     assert_response :success
   end
 
