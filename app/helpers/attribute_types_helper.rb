@@ -1,14 +1,12 @@
 module AttributeTypesHelper
 
-  def read_and_store_attribute_types(upload, sheet_name)
-    @data = Spreadsheet.open 'public'+upload.attachment_url
-    @sheet = @data.worksheet sheet_name
+  def read_and_store_attribute_types(sheet)
     @types = Array.new
 
     i = 1
     s = 'string'
-    while i < @sheet.rows.length
-      row = @sheet.row(i)
+    while i < sheet.rows.length
+      row = sheet.row(i)
       if row[0].present?
         if row[1].present?
           @code = (row[0]+row[1])

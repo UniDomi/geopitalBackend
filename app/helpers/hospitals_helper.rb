@@ -43,7 +43,7 @@ module HospitalsHelper
       end
       if @hospData["Inst"] != nil
         if !Hospital.exists?(name: @hospData["Inst"])
-          @hosp = Hospital.create!(name:@hospData["Inst"], streetAndNumber:@hospData["Adr"], zipCodeAndCity:@hospData["Ort"])
+          @hosp = Hospital.create(name:@hospData["Inst"], streetAndNumber:@hospData["Adr"], zipCodeAndCity:@hospData["Ort"])
         else
           @hosp = Hospital.where(name:@hospData["Inst"]).first
         end
