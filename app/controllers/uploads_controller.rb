@@ -13,7 +13,7 @@ class UploadsController < ApplicationController
     if @upload.save
       redirect_to uploads_path, notice:"#{@upload.name} has been uploaded."
     else
-      render new
+      render :action => :new
     end
   end
 

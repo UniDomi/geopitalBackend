@@ -3,9 +3,6 @@ require 'spreadsheet'
 class ParsersController < ApplicationController
 
   Spreadsheet.client_encoding = 'UTF-8'
-  def index
-    @uploads = Upload.all
-  end
 
   def details
     @upload = Upload.find(params[:id])

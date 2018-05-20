@@ -1,32 +1,30 @@
 Rails.application.routes.draw do
-  get 'locations/index'
-  get 'locations/details'
-  get 'locations/coords'
+
+  # Hospital Locations
   post 'locations/parse'
+  # Hospitals
   get 'hospitals/coords'
   get 'hospitals/details'
   get 'hospitals/index'
-  get 'hospitals/new'
+  post 'hospitals/coords_single'
   post 'hospitals/parse'
+  # API
   get 'api/hospitals'
   get 'api/attributeTypes'
+  # attribute types
   get 'attribute_types/index'
-  get 'attribute_types/new'
   post 'attribute_types/parse'
-  get 'attribut_types/inex'
-  get 'attribut_types/nw'
-  post 'attribut_types/parse'
-  get 'parsers/index'
+
+  # Excel Parser
   get 'parsers/details'
   get 'parsers/parse'
+
+  # Uploads
   resources :uploads, only: [:index, :new, :create, :destroy]
   get 'uploads/index'
   get 'uploads/new'
   get 'uploads/create'
   get 'uploads/destroy'
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
-  #root 'application#hello'
+
   root 'uploads#index'
 end
