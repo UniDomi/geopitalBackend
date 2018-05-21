@@ -3,7 +3,7 @@
 <p>This hospital has <%= @hospital.hospital_attributes.length %> attributes </p>
 <p><%if @hospital.longitude == nil%>
   <strong> This hospital has no geocoding</strong>
-  <%= link_to 'Geocode!', {action: 'new', :id => @hospital.id}%>
+  <%= button_to 'Geocode!', {action: 'coords_single', :id => @hospital.id}%>
   <% end %>
 </p>
 <table>
