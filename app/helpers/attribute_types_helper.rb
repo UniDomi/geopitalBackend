@@ -21,7 +21,7 @@ module AttributeTypesHelper
       if @code == 'AnzStand'
         s = 'number'
       end
-      if @code == 'Amb' || @code == 'Stat' || @code == 'Amb, Stat' || @code == 'Inst, Adr, Ort'
+      if @code == 'Amb' || @code == 'Stat' || @code == 'Amb, Stat' || @code == 'Inst, Adr, Ort' || @code == 'KT' || @code == 'Typ'
         i += 1
         next
       end

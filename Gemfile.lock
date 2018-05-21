@@ -204,7 +204,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap-sass
+  bootstrap-sass (= 3.3.7)
   byebug
   capybara (>= 2.15, < 4.0)
   carrierwave
