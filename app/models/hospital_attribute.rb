@@ -4,5 +4,5 @@ class HospitalAttribute < ApplicationRecord
   validates(:value, presence: true)
   validates(:hospital_id, presence: true)
   validates(:code, uniqueness: {scope: [:year, :hospital_id]})
-  belongs_to :hospital
+  belongs_to :hospital, touch: true
 end
