@@ -21,7 +21,7 @@ class HospitalsController < ApplicationController
     sheet_name = params[:sheet]
     data = Spreadsheet.open 'public'+upload.attachment_url
     sheet = data.worksheet sheet_name
-    read_and_store_hospitals(sheet, sheet_name)
+    @hosps = read_and_store_hospitals(sheet, sheet_name)
   end
 
   def coords

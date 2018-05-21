@@ -24,6 +24,7 @@ module LocationsHelper
       end
       j += 1
     end
+    return [@locs, @errors]
   end
 
 end

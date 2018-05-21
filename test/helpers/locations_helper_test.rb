@@ -12,12 +12,13 @@ class LocationsHelperTest < ActionDispatch::IntegrationTest
     sheet_hosp = data.worksheet sheet_name_hosp
 
     read_and_store_hospitals(sheet_hosp, sheet_name_hosp)
-    read_and_store_locations(sheet_loc)
+    returns = read_and_store_locations(sheet_loc)
+    assert returns[0].count == 1
+    assert returns[1].count == 0
     hospital_without_loc_id = Hospital.find_by_name("RehaClinic Baden").id
     hospital_with_loc_id = Hospital.find_by_name("Groupement Hospitalier de l'Ouest Lémanique (GHOL) SA").id
     assert_nil HospitalLocation.find_by_hospital_id(hospital_without_loc_id)
     assert_not_nil HospitalLocation.find_by_hospital_id(hospital_with_loc_id)
-    #assert hospital_with_loc.hospital_locations.name == "Hôpital de Rolle"
   end
 
 end
