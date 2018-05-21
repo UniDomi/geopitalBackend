@@ -1,10 +1,22 @@
 <h1><%= @sheet.name %></h1>
-<p><%=link_to 'Parse AttributeTypes',{:controller=>'attribute_types', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
-<p><%=link_to 'Parse Hospitals',{:controller=>'hospitals', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
-<p><%=link_to 'Parse Locations',{:controller=>'locations', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%> </p>
-<ul>
-  <% @sheet.each do |row| %>
-  <li><%= row %> </li>
-  <li><%= row.length %></li>
-  <%end %>
-</ul>
+<% if @sheet.name == 'Kennzahlen' %>
+  <%=button_to 'Parse',{:controller=>'attribute_types', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%>
+<% end %>
+<% if @sheet.name[0..4] == 'KZ201' %>
+  <%=button_to 'Parse',{:controller=>'hospitals', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%>
+<% end %>
+<% if @sheet.name[0..4] == ('Stand') %>
+  <%=button_to 'Parse',{:controller=>'locations', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%>
+<% end %>
+
+<h2>Data</h2>
+  <table class = "table table-bordered table-striped">
+    <tr>
+      <th>Row</th>
+    </tr>
+    <% @sheet.each do |h| %>
+    <tr>
+      <td><%=h%></td>
+    </tr>
+    <%end%>
+  </table>

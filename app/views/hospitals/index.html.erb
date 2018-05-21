@@ -1,6 +1,7 @@
-<h1>Hospitals#index</h1>
+<h1>Hospitals</h1>
+<%= link_to 'Geocode hospitals', {action: 'coords'}%>
 <h2>Kennzahlen</h2>
-<table>
+<table class = "table table-bordered table-striped">
   <tr>
     <td>Spitäler in DB</td>
     <td><%=@hospitals.length%></td>
@@ -22,11 +23,19 @@
     <td><%=@hospitals.select{|l| l.hospital_locations.length > 0}.count%></td>
   </tr>
 </table>
-<h2>Spitäler</h2>
-<ul>
-  <% @hospitals.each do |hospital| %>
-  <li><%=link_to hospital.name, {action: 'details', :id => hospital.id}%></li>
-  <li><%= hospital.hospital_attributes.length %></li>
-  <li><%= hospital.hospital_locations.length %></li>
-  <% end %>
-</ul>
+
+<h2>Hospitals</h2>
+  <table class = "table table-bordered table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Number of attributes</th>
+      <th>Number of locations</th>
+    </tr>
+    <% @hospitals.each do |h| %>
+    <tr>
+      <td><%=link_to h.name, {action: 'details', :id => h.id}%></td>
+      <td><%= h.hospital_attributes.length %></td>
+      <td><%= h.hospital_locations.length %></td>
+    </tr>
+    <%end%>
+  </table>

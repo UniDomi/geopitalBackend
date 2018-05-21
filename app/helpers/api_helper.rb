@@ -9,12 +9,4 @@ module ApiHelper
     end
     return Oj.dump(hash)
   end
-
-  def create_json_myself
-    max_year = HospitalAttribute.maximum("year")
-
-    @hospitals = Hospital.includes(:hospital_attributes).where(:hospital_attributes => {:year => max_year})
-
-    return MultiJson.dump({hospitals: @hospitals.map {|h| h.attributes}})
-  end
 end

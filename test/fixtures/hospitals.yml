@@ -13,3 +13,10 @@ Linde:
   zipCodeAndCity: 2501 Biel
   latitude: 7.4386374
   longitude: 46.951083
+
+NoCoords:
+  name: Hirslanden Klinik Linde
+  streetAndNumber: Blumenrain 105
+  zipCodeAndCity: 2501 Biel
+  latitude:
+  longitude:

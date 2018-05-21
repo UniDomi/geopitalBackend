@@ -3,10 +3,11 @@
 <p>This hospital has <%= @hospital.hospital_attributes.length %> attributes </p>
 <p><%if @hospital.longitude == nil%>
   <strong> This hospital has no geocoding</strong>
-  <%= link_to 'Geocode!', {action: 'new', :id => @hospital.id}%>
+  <%= button_to 'Geocode!', {action: 'coords_single', :id => @hospital.id}%>
   <% end %>
 </p>
-<table>
+<h2><%= @hospital.name%></h2>
+<table class = "table table-bordered table-striped">
   <tr>
     <th>Hospital</th>
   </tr>
@@ -27,8 +28,9 @@
     <td><%= @hospital.latitude%></td>
   </tr>
 </table>
+<h2>Locations</h2>
 <% @hospital.hospital_locations.each do |loc| %>
-  <table>
+  <table class = "table table-bordered table-striped">
     <tr>
       <th>Location</th>
     </tr>
@@ -50,15 +52,18 @@
     </tr>
   </table>
 <% end %>
-<table>
+<h2>Attributes</h2>
+<table class = "table table-bordered table-striped">
   <tr>
     <th>Code</th>
     <th>Value</th>
+    <th>Year</th>
   </tr>
   <% @hospital.hospital_attributes.each do |attr| %>
   <tr>
     <td><%= attr.code %></td>
     <td><%= attr.value %></td>
+    <td><%= attr.year %></td>
   </tr>
     <% end %>
 </table>

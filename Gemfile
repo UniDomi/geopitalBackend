@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.0'
 # Gem for Uploading Files
 gem 'carrierwave'
 # Gem for Nice design
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.7'
 # Gem for reading excel spreadsheets
 gem 'spreadsheet'
 
