@@ -30,6 +30,7 @@ module AttributeTypesHelper
       end
       i += 1
     end
+    return @types
   end
 
 end
