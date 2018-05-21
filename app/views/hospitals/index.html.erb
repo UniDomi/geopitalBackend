@@ -28,12 +28,16 @@
   <table class = "table table-bordered table-striped">
     <tr>
       <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
       <th>Number of attributes</th>
       <th>Number of locations</th>
     </tr>
     <% @hospitals.each do |h| %>
     <tr>
       <td><%=link_to h.name, {action: 'details', :id => h.id}%></td>
+      <td><%= h.latitude %></td>
+      <td><%= h.longitude %></td>
       <td><%= h.hospital_attributes.length %></td>
       <td><%= h.hospital_locations.length %></td>
     </tr>
