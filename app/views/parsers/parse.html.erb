@@ -8,9 +8,15 @@
 <% if @sheet.name[0..4] == ('Stand') %>
   <%=button_to 'Parse',{:controller=>'locations', :action => 'parse', :id => @upload.id, :sheet=> @sheet.name}%>
 <% end %>
-<ul>
-  <% @sheet.each do |row| %>
-  <li><%= row %> </li>
-  <li><%= row.length %></li>
-  <%end %>
-</ul>
+
+<h2>Data</h2>
+  <table class = "table table-bordered table-striped">
+    <tr>
+      <th>Row</th>
+    </tr>
+    <% @sheet.each do |h| %>
+    <tr>
+      <td><%=h%></td>
+    </tr>
+    <%end%>
+  </table>

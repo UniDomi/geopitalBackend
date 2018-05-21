@@ -10,9 +10,17 @@
   </head>
 
   <body>
-    <%=link_to 'Home',{:controller =>'uploads', :action => 'index'} %>
-    <%=link_to 'Hospitals',{:controller =>'hospitals', :action => 'index'} %>
-    <%=link_to 'AttributeTypes',{:controller =>'attribute_types', :action => 'index'} %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%=link_to 'GeopitalBackend',{:controller =>'uploads', :action => 'index'}, id:"logo" %>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%=link_to 'Uploads',{:controller =>'uploads', :action => 'index'} %></li>
+          <li><%=link_to 'Hospitals',{:controller =>'hospitals', :action => 'index'} %></li>
+          <li><%=link_to 'AttributeTypes',{:controller =>'attribute_types', :action => 'index'} %></li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
