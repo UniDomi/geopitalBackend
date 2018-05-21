@@ -28,9 +28,9 @@ class HospitalsController < ApplicationController
     @hospitals = Hospital.where(latitude: nil)
     @errors = Array.new
     @hospitals.each do |hospital|
-      errors << get_coordinates(hospital)
+      @errors << get_coordinates(hospital)
       hospital.hospital_locations.each do |loc|
-        errors << get_coordinates(loc)
+        @errors << get_coordinates(loc)
       end
     end
   end
