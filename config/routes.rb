@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'hospitals/coords'
   get 'hospitals/details'
   get 'hospitals/index'
+  get 'hospitals/edit'
+  post 'hospitals/delete'
   post 'hospitals/coords_single'
   post 'hospitals/parse'
   # API

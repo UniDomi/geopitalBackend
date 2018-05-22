@@ -16,6 +16,19 @@ class HospitalsController < ApplicationController
     @message = error == nil ? @message = 'Geocoding successfull' : error
   end
 
+  def edit
+    @hospital = Hospital.find(params[:id])
+  end
+
+  def delete
+    if Hospital.destroy(params[:id])
+      render 'deleted'
+    else
+      render 'edit'
+    end
+  end
+
+
   def parse
     upload = Upload.find(params[:id])
     sheet_name = params[:sheet]

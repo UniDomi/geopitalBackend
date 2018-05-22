@@ -1,6 +1,6 @@
 <h1><%= @hospital.name %></h1>
 <%= link_to 'Index', {action:'index'}%>
-<%= link_to 'Edit', {action:'edit', :id => @hospital.id} %>
+<%= button_to 'Delete Hospital', {action: 'delete', :id => @hospital.id}%>
 <p>This hospital has <%= @hospital.hospital_attributes.length %> attributes </p>
 <p><%if @hospital.longitude == nil%>
   <strong> This hospital has no geocoding</strong>
